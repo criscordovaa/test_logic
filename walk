@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+
+<?php
+
+require("libraries/Grid.php");
+// Uncomment this only if the test coming from a web browser, because by default i get data from command line interface
+//Grid::$default_rows = 3;
+//Grid::$default_columns = 3;
+
+$testCase = (new Grid())->start();
+if ($testCase->args["--show-grid"] !== null)  $testCase->printPath();
+echo "\nThe output for the test are: ".$testCase->getLast()."\n";
